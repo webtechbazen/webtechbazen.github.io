@@ -1,0 +1,21 @@
+.title {
+	color: #0B00B5;
+	text-align: center;
+	font-size: 8em;
+	font-family: monospace;
+}
+.contentbox {
+	margin-top: 20px;
+	margin-right: 20%;
+	margin-bottom: 20px;
+	margin-left: 20%;
+	background: #e62648;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+.content {
+	padding: 5px 5% 5px 5%;
+	font-family: "Lucida Sans Unicode";
+	font-size: 17px;
+	text-align: justify;
+}
