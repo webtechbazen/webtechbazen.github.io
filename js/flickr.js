@@ -27,8 +27,8 @@ function searchPhotos() {
         },
         success: function(json) {
             galleryClear();
-            $.each(json.photos.photo, function(index, value) {
-                galleryAdd(makeImg(makePhotoUrl(value), value.title));
+            $.each(json.photos.photo, function(index, photo) {
+                galleryAdd(makeImg(makePhotoUrl(photo), photo.title));
             });
         },
         error: function(errormsg) {
