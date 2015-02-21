@@ -1,9 +1,9 @@
 .title {
 	color: #0B00B5;
 	text-align: center;
-	font-size: 8em;
-	font-family: monospace;
+	font-size: 4em;
 }
+
 .article {
 	margin-top: 20px;
 	margin-right: 20%;
@@ -11,10 +11,38 @@
 	margin-left: 20%;
 	border: 1px solid black;
 	border-radius: 2px;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
+
+.header {
+	margin-top: 20px;
+	margin-right: 20%;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	margin-bottom: 20px;
+	margin-left: 20%;
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
 .content {
 	padding: 5px 5% 5px 5%;
-	font-family: "Lucida Sans Unicode";
 	font-size: 17px;
 	text-align: justify;
+}
+
+#navlist li {
+	display: inline;
+	list-style-type: none;
+	border: 1px solid black;
+    text-align: center;
+	padding-right: 20px;
+}
+
+#navlist a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#navlist a:hover {
+    color: #000000;
 }
