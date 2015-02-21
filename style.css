@@ -1,19 +1,24 @@
 body {
-	background-color: #f5f5f5;
+	background-color: white;
 }
 
 .title {
-	color: black;
-	text-align: center;
-	font-size: 4em;
+	position: fixed;
+	top: 0px;
+	z-index: -1;
+	color: orange;
+	text-align: left;
+	font-size: 7em;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
 }
 
-.article {
+.main {
 	background-color: white;
-	margin-top: 20px;
+	margin-top: 9em;
 	margin-right: 20%;
 	margin-bottom: 20px;
 	margin-left: 20%;
+	padding-top: 0px;
 	border: 1px solid black;
 	border-radius: 2px;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
@@ -24,7 +29,7 @@ body {
 	margin-top: 20px;
 	margin-right: 20%;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	margin-left: 20%;
 	border: 1px solid black;
 	border-radius: 2px;
@@ -34,6 +39,12 @@ body {
 	padding: 5px 5% 5px 5%;
 	font-size: 17px;
 	text-align: justify;
+}
+
+#navlist {
+	padding: 20px 0px;
+	margin-top: 0px;
+	background-color: #f5f5f5;
 }
 
 #navlist li {
