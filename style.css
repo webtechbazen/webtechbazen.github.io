@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('fonts/ComicNeue-Light.eot');
+  src: url('fonts/ComicNeue-Light.eot?#iefix') format('embedded-opentype'),
+       url('fonts/ComicNeue-Light.woff') format('woff'),
+       url('fonts/ComicNeue-Light.woff2') format('woff2'),
+       url('fonts/ComicNeue-Light.ttf')  format('truetype');
+  font-weight: 100;
+}
+
 body {
 	background-color: orange;
 }
@@ -9,7 +19,7 @@ body {
 	color: white;
 	text-align: left;
 	font-size: 7em;
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
 }
 
 .main {
@@ -21,13 +31,17 @@ body {
 	padding-top: 0px;
 	border-radius: 2px;
     opacity: 0.9;
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
 }
 
 .content {
 	padding: 5px 5% 5px 5%;
 	font-size: 17px;
 	text-align: justify;
+}
+
+.content p{
+	font-size: 1.5em;
 }
 
 #navlist {
