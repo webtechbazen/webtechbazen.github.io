@@ -23,21 +23,23 @@ body {
 }
 
 .main {
-	background-color: white;
 	margin-top: 9em;
-	margin-right: 20%;
+	margin-right: 15%;
 	margin-bottom: 9em;
-	margin-left: 20%;
-	padding-top: 0px;
+	margin-left: 15%;
+	padding: 0px;
 	border-radius: 2px;
-    opacity: 0.9;
 	font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
 }
 
 .content {
 	padding: 5px 5% 5px 5%;
+	margin-top: 0px;
 	font-size: 17px;
 	text-align: justify;
+    opacity: 1;
+	z-index: 1;
+	background-color: white;
 }
 
 .content p{
@@ -47,7 +49,9 @@ body {
 #navlist {
 	padding: 20px 5px;
 	margin-top: 0px;
+	margin-bottom: 0px;
 	background-color: #ddd;
+    opacity: 0.9;
 }
 
 #navlist li {
