@@ -32,13 +32,18 @@ body {
 	font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
 }
 
+.backContent {
+	margin: 0px;
+	padding: 0px;
+	background-color: orange;
+}
+
 .content {
 	padding: 5px 5% 5px 5%;
 	margin-top: 0px;
 	font-size: 17px;
 	text-align: justify;
-    opacity: 1;
-	z-index: 1;
+    opacity: 0.9;
 	background-color: white;
 }
 
