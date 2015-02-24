@@ -66,6 +66,8 @@ body {
 #navlist li {
     list-style-type: none;
     display: inline-block;
+    margin: 2px;
+    margin-bottom: 0px;
 }
 #navlist li:hover {
     border-bottom: 2px solid black;
