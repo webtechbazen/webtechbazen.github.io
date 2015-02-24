@@ -7,7 +7,7 @@ $(document).ready(function() {
     };
     var curPath = $(location).attr("pathname");
     $.each(navItems, function(title, href) {
-        if ((!curPath && href == "index.html") || curPath.match(new RegExp(href + "$"))) {
+        if ((href == "index.html" && curPath.match(new RegExp("/$"))) || curPath.match(new RegExp(href + "$"))) {
             $("#navlist").append("<li class=\"nolink\">" + title + "</li>");
         } else {
             $("#navlist").append("<li><a href=\"" + href + "\">" + title + "</a></li>");
