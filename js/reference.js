@@ -3,7 +3,7 @@ function referenceAdd(refId, url) {
 }
 $(document).ready(function() {
     var refCount = 1;
-    $("a").each(function() {
+    $(".content a").each(function() {
         var href = $(this).attr("href");
         if (href.charAt(0) != '#') {
             var refId = "ref-" + refCount++;
