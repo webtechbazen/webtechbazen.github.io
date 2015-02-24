@@ -5,12 +5,23 @@
         <title>Flickr Test</title>
         <link rel="stylesheet" href="style.css">
         <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/reference.js"></script>
         <script src="js/flickr.js"></script>
     </head>
     <body>
-        <h1>Flickr API Test</h1>
-        <input id="searchQuery" type="text">
-        <button id="searchButton" type="button">Search</button>
-    <ul id="gallery"></ul>
-</body>
+        <div class="title">Flickr API Test</div>
+        <div class="container">
+            <div class="navigation">
+                <ul id="navlist">
+                </ul>
+            </div>
+            <div class="content">
+                <input id="searchQuery" type="text">
+                <button id="searchButton" type="button">Search</button>
+                <ul id="gallery">
+                </ul>
+            </div>
+        </div>
+    </body>
 </html>

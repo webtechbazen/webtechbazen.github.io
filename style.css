@@ -33,7 +33,7 @@ body {
     font-size: 4em;
     font-family: "Avenir Next";
 }
-.main {
+.container {
     margin-top: 5em;
     margin-right: 15%;
     margin-bottom: 9em;
@@ -41,22 +41,6 @@ body {
     padding: 0px;
     border-radius: 2px;
     font-family: "Avenir Next";
-}
-.backContent {
-    margin: 0px;
-    padding: 0px;
-    background-color: orange;
-}
-.content {
-    padding: 5px 5% 5px 5%;
-    margin-top: 0px;
-    font-size: 17px;
-    text-align: justify;
-    opacity: 0.9;
-    background-color: white;
-}
-.content p {
-    font-size: 1.5em;
 }
 .navigation {
     padding-top: 10px;
@@ -95,6 +79,17 @@ body {
     background-color: white;
     color: black;
     text-decoration: none;
+}
+.content {
+    padding: 5px 5% 5px 5%;
+    margin-top: 0px;
+    font-size: 17px;
+    text-align: justify;
+    opacity: 0.9;
+    background-color: white;
+}
+.content p {
+    font-size: 1.5em;
 }
 a:link {
     text-decoration: none;
