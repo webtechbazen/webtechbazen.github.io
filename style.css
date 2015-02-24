@@ -1,20 +1,36 @@
 @font-face {
-    font-family: 'Comic Neue';
-    src: url('fonts/ComicNeue-Light.eot');
-    src: url('fonts/ComicNeue-Light.eot?#iefix') format('embedded-opentype'), url('fonts/ComicNeue-Light.woff') format('woff'), url('fonts/ComicNeue-Light.woff2') format('woff2'), url('fonts/ComicNeue-Light.ttf') format('truetype');
-    font-weight: 100;
+    font-family: "Avenir Next";
+    src: url('fonts/AvenirNext-Regular.ttf');
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Avenir Next";
+    src: url('fonts/AvenirNext-Bold.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Avenir Next";
+    src: url('fonts/AvenirNext-Italic.ttf');
+    font-style: italic;
+}
+@font-face {
+    font-family: "Avenir Next";
+    src: url('fonts/AvenirNext-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
 }
 body {
     background-color: orange;
 }
 .title {
     position: fixed;
-    top: 0px;
     z-index: -1;
+    top: 0px;
+    width: 100%;
+    text-align: center;
     color: white;
-    text-align: left;
     font-size: 7em;
-    font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
+    font-family: "Avenir Next";
 }
 .main {
     margin-top: 9em;
@@ -23,7 +39,7 @@ body {
     margin-left: 15%;
     padding: 0px;
     border-radius: 2px;
-    font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
+    font-family: "Avenir Next";
 }
 .backContent {
     margin: 0px;
@@ -56,11 +72,11 @@ body {
     text-align: center;
 }
 #navlist a {
-    color: #000000;
+    color: black;
     text-decoration: none;
 }
 #navlist a:hover {
-    color: #000000;
+    color: gray;
 }
 a:link {
     text-decoration: none;
