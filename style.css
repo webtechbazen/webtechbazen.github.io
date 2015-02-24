@@ -1,77 +1,84 @@
 @font-face {
-  font-family: 'Comic Neue';
-  src: url('fonts/ComicNeue-Light.eot');
-  src: url('fonts/ComicNeue-Light.eot?#iefix') format('embedded-opentype'),
-       url('fonts/ComicNeue-Light.woff') format('woff'),
-       url('fonts/ComicNeue-Light.woff2') format('woff2'),
-       url('fonts/ComicNeue-Light.ttf')  format('truetype');
-  font-weight: 100;
+    font-family: 'Comic Neue';
+    src: url('fonts/ComicNeue-Light.eot');
+    src: url('fonts/ComicNeue-Light.eot?#iefix') format('embedded-opentype'), url('fonts/ComicNeue-Light.woff') format('woff'), url('fonts/ComicNeue-Light.woff2') format('woff2'), url('fonts/ComicNeue-Light.ttf') format('truetype');
+    font-weight: 100;
 }
-
 body {
-	background-color: orange;
+    background-color: orange;
 }
-
 .title {
-	position: fixed;
-	top: 0px;
-	z-index: -1;
-	color: white;
-	text-align: left;
-	font-size: 7em;
-	font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
+    position: fixed;
+    top: 0px;
+    z-index: -1;
+    color: white;
+    text-align: left;
+    font-size: 7em;
+    font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
 }
-
 .main {
-	margin-top: 9em;
-	margin-right: 15%;
-	margin-bottom: 9em;
-	margin-left: 15%;
-	padding: 0px;
-	border-radius: 2px;
-	font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
+    margin-top: 9em;
+    margin-right: 15%;
+    margin-bottom: 9em;
+    margin-left: 15%;
+    padding: 0px;
+    border-radius: 2px;
+    font-family: 'Comic Neue', Tahoma, Verdana, Segoe, sans-serif;
 }
-
 .backContent {
-	margin: 0px;
-	padding: 0px;
-	background-color: orange;
+    margin: 0px;
+    padding: 0px;
+    background-color: orange;
 }
-
 .content {
-	padding: 5px 5% 5px 5%;
-	margin-top: 0px;
-	font-size: 17px;
-	text-align: justify;
+    padding: 5px 5% 5px 5%;
+    margin-top: 0px;
+    font-size: 17px;
+    text-align: justify;
     opacity: 0.9;
-	background-color: white;
+    background-color: white;
 }
-
-.content p{
-	font-size: 1.5em;
+.content p {
+    font-size: 1.5em;
 }
-
 #navlist {
-	padding: 20px 5px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	background-color: #ddd;
+    padding: 20px 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #ddd;
     opacity: 0.9;
 }
-
 #navlist li {
-	padding: 10px 5px;
-	background-color: white;
-	display: inline;
-	list-style-type: none;
+    padding: 10px 5px;
+    background-color: white;
+    display: inline;
+    list-style-type: none;
     text-align: center;
 }
-
 #navlist a {
     color: #000000;
     text-decoration: none;
 }
-
 #navlist a:hover {
     color: #000000;
+}
+a:link {
+    text-decoration: none;
+    color: blue;
+}
+a:visited {
+    text-decoration: none;
+    color: purple;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: underline;
+}
+a.external {
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-image: url(http://bits.wikimedia.org/static-1.25wmf17/skins/Vector/images/external-link-ltr-icon.png);
+    padding-right: 13px;
 }
