@@ -5,7 +5,12 @@ $(document).ready(function() {
         "Reference": "reference.html",
         "Flickr": "flickr.html"
     };
+    var curPath = $(location).attr("pathname");
     $.each(navItems, function(title, href) {
-        $("#navlist").append("<li><a href=\"" + href + "\">" + title + "</a></li>");
+        if (!curPath.match(new RegExp(href + "$"))) {
+            $("#navlist").append("<li><a href=\"" + href + "\">" + title + "</a></li>");
+        } else {
+            $("#navlist").append("<li class=\"nolink\">" + title + "</li>");
+        }
     });
 });

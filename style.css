@@ -73,6 +73,17 @@ body {
     border-bottom: 2px solid black;
     margin-bottom: -2px;
 }
+#navlist li.nolink {
+    padding: 10px 8px;
+    height: 100%;
+    display: inline-block;
+    background-color: white;
+    border-bottom: 2px solid gray;
+    margin-bottom: -2px;
+}
+#navlist li.nolink:hover {
+    border-color: gray;
+}
 #navlist a {
     padding: 10px 8px;
     height: 100%;
