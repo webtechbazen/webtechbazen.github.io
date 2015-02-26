@@ -11,7 +11,16 @@ function makePhotoUrl(photo) {
 }
 
 function makeImg(src, alt) {
-    return "<img src=\"" + src + "\" alt=\"" + alt + "\">";
+    return "<img src=\"" + src + "\" alt=\"" + alt + "\" width=\"200\" height=\"200\">";
+}
+
+function imageClick() {
+    $("#largeImage img").attr("src", $(this).attr("src"));
+    $("#largeImage").fadeIn(800);
+}
+
+function largeImageClick() {
+    $("#largeImage").fadeOut(800);
 }
 
 function searchPhotos() {
@@ -27,9 +36,11 @@ function searchPhotos() {
         },
         success: function(json) {
             galleryClear();
+            var id = 0;
             $.each(json.photos.photo, function(index, photo) {
                 galleryAdd(makeImg(makePhotoUrl(photo), photo.title));
             });
+            $("#gallery img").click(imageClick);
         },
         error: function(errormsg) {
             galleryClear();
@@ -39,4 +50,5 @@ function searchPhotos() {
 }
 $(document).ready(function() {
     $("#searchButton").click(searchPhotos);
+    $("#largeImage").click(largeImageClick);
 });
