@@ -11,7 +11,16 @@ function makePhotoUrl(photo) {
 }
 
 function makeImg(src, alt) {
-    return "<img src=\"" + src + "\" alt=\"" + alt + "\">";
+    return "<img src=\"" + src + "\" alt=\"" + alt + "\" width=\"200\" height=\"200\">";
+}
+
+function imageClick() {
+    $("#largeImage").html("<img src=\"" + $(this).attr("src") + "\" alt=\"" + $(this).attr("alt") + "\">");
+    $("#largeImage").fadeIn(800);
+}
+
+function largeImageClick() {
+    $("#largeImage").fadeOut(800);
 }
 
 function searchPhotos() {
@@ -23,13 +32,16 @@ function searchPhotos() {
             api_key: "fb89457280d11f1976477658e52fb9ea",
             method: "flickr.photos.search",
             format: "json",
+            sort: "interestingness-desc",
             text: $("#searchQuery").val()
         },
         success: function(json) {
             galleryClear();
+            var id = 0;
             $.each(json.photos.photo, function(index, photo) {
                 galleryAdd(makeImg(makePhotoUrl(photo), photo.title));
             });
+            $("#gallery img").click(imageClick);
         },
         error: function(errormsg) {
             galleryClear();
@@ -39,4 +51,7 @@ function searchPhotos() {
 }
 $(document).ready(function() {
     $("#searchButton").click(searchPhotos);
+    $("#largeImage").click(largeImageClick);
+    $("#searchQuery").val("coral reef");
+    searchPhotos();
 });
