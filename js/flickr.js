@@ -32,6 +32,7 @@ function searchPhotos() {
             api_key: "fb89457280d11f1976477658e52fb9ea",
             method: "flickr.photos.search",
             format: "json",
+            sort: "interestingness-desc",
             text: $("#searchQuery").val()
         },
         success: function(json) {
@@ -51,4 +52,6 @@ function searchPhotos() {
 $(document).ready(function() {
     $("#searchButton").click(searchPhotos);
     $("#largeImage").click(largeImageClick);
+    $("#searchQuery").val("coral reef");
+    searchPhotos();
 });
