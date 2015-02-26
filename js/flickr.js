@@ -15,7 +15,7 @@ function makeImg(src, alt) {
 }
 
 function imageClick() {
-    $("#largeImage").empty().append("<img src=\"" + $(this).attr("src") + "\" alt=\"" + $(this).attr("alt") + "\">");
+    $("#largeImage").html("<img src=\"" + $(this).attr("src") + "\" alt=\"" + $(this).attr("alt") + "\">");
     $("#largeImage").fadeIn(800);
 }
 
