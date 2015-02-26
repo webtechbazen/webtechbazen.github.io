@@ -3,7 +3,8 @@ $(document).ready(function() {
         "Home": "index.html",
         "Best Page Ever!!": "standaard.html",
         "Reference": "reference.html",
-        "Flickr": "flickr.html"
+        "Flickr": "flickr.html",
+        "flot": "flot.html"
     };
     var curPath = $(location).attr("pathname");
     $.each(navItems, function(title, href) {
