@@ -19,10 +19,30 @@
     font-weight: bold;
     font-style: italic;
 }
+a:link {
+    text-decoration: none;
+    color: blue;
+}
+a:visited {
+    text-decoration: none;
+    color: purple;
+}
+a:hover {
+    color: gray;
+}
+a:active {
+    color: gray;
+}
+a.external {
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-image: url(http://bits.wikimedia.org/static-1.25wmf17/skins/Vector/images/external-link-ltr-icon.png);
+    padding-right: 13px;
+}
 body {
     background-color: orange;
 }
-.title {
+#title {
     position: fixed;
     z-index: -1;
     top: 0px;
@@ -33,7 +53,7 @@ body {
     font-size: 6em;
     font-family: "Avenir Next";
 }
-.container {
+#container {
     margin-top: 7em;
     margin-right: 15%;
     margin-bottom: 9em;
@@ -42,7 +62,7 @@ body {
     border-radius: 2px;
     font-family: "Avenir Next";
 }
-.navigation {
+#navigation {
     padding-top: 10px;
 }
 #navlist {
@@ -79,7 +99,7 @@ body {
     color: black;
     text-decoration: none;
 }
-.content {
+#content {
     padding: 5px 5% 5px 5%;
     margin-top: 0px;
     font-size: 17px;
@@ -87,12 +107,8 @@ body {
     opacity: 0.9;
     background-color: white;
 }
-.content p {
+#content p {
     font-size: 1.5em;
-}
-#g {
-    width:600px;
-    height:300px
 }
 #flot-container {
     box-sizing: boder-box;
@@ -111,23 +127,40 @@ body {
     float: right;
     width: 135px;
 }
-a:link {
-    text-decoration: none;
-    color: blue;
+#gallery {
+    list-style-type: none;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
 }
-a:visited {
-    text-decoration: none;
-    color: purple;
+#gallery li {
+    display: inline-block;
+    padding-right: 5px;
 }
-a:hover {
-	color: gray;
+#gallery img {
+    border: 2px solid gray;
+    padding: 1px;
 }
-a:active {
-	color: gray;
+#gallery img:hover {
+    cursor: pointer;
 }
-a.external {
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-image: url(http://bits.wikimedia.org/static-1.25wmf17/skins/Vector/images/external-link-ltr-icon.png);
-    padding-right: 13px;
+#largeImage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+#largeImage img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 2px solid gray;
+    padding: 1px;
+    background: white;
 }

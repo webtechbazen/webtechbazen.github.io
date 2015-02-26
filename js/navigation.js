@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 $(window).scroll(function() {
     var top = $(window).scrollTop() - 50;
-    var fadePos = $(".navigation").position().top + $(".navigation").outerHeight(true) / 2;
+    var fadePos = $("#navigation").position().top + $("#navigation").outerHeight(true) / 2;
     var opacity = top < fadePos ? 1 - (top / (fadePos - 44)) : 0;
-    $(".title").stop(true, true).fadeTo(0, opacity);
+    $("#title").stop(true, true).fadeTo(0, opacity);
 });
