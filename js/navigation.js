@@ -4,7 +4,7 @@ $(document).ready(function() {
         "Best Page Ever!!": "standaard.html",
         "Reference": "reference.html",
         "Flickr": "flickr.html",
-        "flot": "flot.html"
+        "Flot": "flot.html"
     };
     var curPath = $(location).attr("pathname");
     $.each(navItems, function(title, href) {
