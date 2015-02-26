@@ -94,6 +94,23 @@ body {
     width:600px;
     height:300px
 }
+#flot-container {
+    box-sizing: boder-box;
+    width: 850px;
+    height: 450px;
+    padding: 20px 15px 15px 15px;
+    margin: 15px auto 30px auto;
+    border: 1px solid #ddd;
+}
+#flot-graph {
+    float: left;
+    width: 675px;
+    height: 100%;
+}
+#flot-choices {
+    float: right;
+    width: 135px;
+}
 a:link {
     text-decoration: none;
     color: blue;
