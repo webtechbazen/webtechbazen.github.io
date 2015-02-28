@@ -2,6 +2,7 @@ $(document).ready(function() {
     var navItems = {
         "Home": "index.html",
         "Best Page Ever!!": "standaard.html",
+        "Correct HTML": "correct.html",
         "Reference": "reference.html",
         "Flickr": "flickr.html",
         "Flot": "flot.html"

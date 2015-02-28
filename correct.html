@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Parsing</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/reference.js"></script>
+    </head>
+    <body>
+        <div id="title">Correct HTML</div>
+        <div id="container">
+            <div id="navigation">
+                <ul id="navlist">
+                </ul>
+            </div>
+            <div id="content">
+                <h1>Correct HTML</h1>
+                <h2>HTML Elements</h2>
+                <p>HTML is made up out of elements and are indicated with tags, the HTML element starts with a opening tag (for example &lt;html&gt;) and end with a closing tag (&lt;/html&gt;). These elements can be sorted in different groups.</p>
+                <h3>Root element(s)</h3>
+                <p>There is only one root element which makes sense considering html has a tree structure, the root element is the html element. Every html document should have a html element.</p>
+                <h3>Document Metadata</h3>
+                <p>The metadata elements contain information about the document and are most of the time nested in the head metadata element. Other metadata elements are, the title element which contains the title of the document, the meta element used to store other metadata, and the style element in which you can nest plain css or a css file.</p>
+                <h3>Section elements</h3>
+                <p>The section elements are there to indicate special kinds of content. The most prominent section element is the body element which contains the entire content of the page. Other examples are, the article element which contains an article, the nav element which contains a or the navigation of a page, the footer element which contains the footer of a page, and the h1 (and h2, h3, h4) element(s) which contain titles or subtitles. Most section elements are new in HTML5 to replace commonly used sections previously indicated with div’s.</p>
+                <h3>Grouping content</h3>
+                <p>The grouping elements separates the document in to logical content groups. The most common grouping elements are the p element which indicates a paragraph, the ul or ol which contain a unordered or ordered list, li which indicates a list item inside a ordered or unordered list, and the div element with which one can sort a group of other elements in a container to give style properties with css.</p>
+                <h3>Text-level semantics</h3>
+                <p>These elements are meant to give meaning to certain parts of text. Examples are, the a element which contains a anchor and is most of the time used to house a link, the i and b elements used to make text aether italic or bold (it is debatable whether these are semantic or syntactic), and the cite element used to indicate a certain text is quoted.</p>
+                <h3>Embedded content</h3>
+                <p>Content elements contain content that is not plain text. Some examples are: the img element contains a image, the video element contains a video, and an audio element to embed an audio file.</p>
+                <h3>Other groups</h3>
+                <p>Other groups are tabular data these elements contain tables of all kinds, forms which are used to create buttons, check boxes, colour pickers and such, and scripting elements to embed scripting in HTML files.</p>
+                <h3>Correct use of elements</h3>
+                <p>There are a few things that can go wrong with these element, first and foremost every element must have a opening and closing tag if possible (in some cases these can be combined in one like &lt;br/&gt;, in other cases an element only has one tag like img). Also every element must contain its intended content, in some cases a parser won’t notice, like if one puts a entire paragraph inside a h1 element or the other way around, in other cases a parser will notice (and do weird things) like if one puts a paragraph inside a image element. Otherwise not much can go wrong.</p>
+                <h2>Other HTML syntax rules</h2>
+                <h3>Attributes</h3>
+                <p>An element can have a attribute, if so this attribute will be expressed inside the opening tag (like &lt;h1 attribute&gt;Some content&lt;/h1&gt;) an attribute has a name and a value.</p>
+                <h3>References:</h3>
+                <ol id="references">
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>
