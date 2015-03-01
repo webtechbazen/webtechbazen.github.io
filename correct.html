@@ -42,14 +42,14 @@
                 <p>An element can have a attribute, if so this attribute will be expressed inside the opening tag (like &lt;h1 attribute&gt;Some content&lt;/h1&gt;) an attribute has a name and a value. There are exceptions like the exception attribute. The attribute name is written with one or more characters except space, less than, greater than, double quotes, single quotes, back slash, equal sign, and any character that is not defined in unicode. The value of the attributes is separated from the attribute name by an equal sign (and zero or more spaces) and is most of the times in double quotes.</p>
                 <h3>Doctype</h3>
                 <p>Every html file should start with a correct doctype, this is so the browser knows what html version the page is using omitting a doctype results in the browser ‘guessing’ what version it is, which could result in incorrect interpretation of the html file.<br/>“A DOCTYPE must consist of the following components, in this order:</p>
-                <ul>
-                    <li>1. A string that is an ASCII case-insensitive match for the string "&lt;!DOCTYPE".</li>
-                    <li>2. One or more space characters.</li>
-                    <li>3. A string that is an ASCII case-insensitive match for the string "html".</li>
-                    <li>4. Optionally, a DOCTYPE legacy string or an obsolete permitted DOCTYPE string.</li>
-                    <li>5. Zero or more space characters.</li>
-                    <li>6. A "&gt;" (U+003E) character.“</li>
-                </ul>
+                <ol>
+                    <li>A string that is an ASCII case-insensitive match for the string "&lt;!DOCTYPE".</li>
+                    <li>One or more space characters.</li>
+                    <li>A string that is an ASCII case-insensitive match for the string "html".</li>
+                    <li>Optionally, a DOCTYPE legacy string or an obsolete permitted DOCTYPE string.</li>
+                    <li>Zero or more space characters.</li>
+                    <li>A "&gt;" (U+003E) character.“</li>
+                </ol>
                 <h3>Text</h3>
                 <p>The text inside text elements must also abide some rules, because some characters are used by the html syntax they can not be used in a normal manner (how els could you separate &lt;/p&gt; in a paragraph from the end tag of a paragraph). This is why the ampersand syntax is used, to write &lt;/p&gt; one must write &amp;lt;/p&amp;gt;.</p>
                 <h3>Block level and inline elements</h3>
