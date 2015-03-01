@@ -111,6 +111,10 @@ body {
     margin-top: 0px;
     padding: 0px;
 }
+#content li {
+    list-style-type: none;
+    font-size: 1.2em;
+}
 #content h1 {
     font-size: 2.5em;
 }
@@ -121,9 +125,7 @@ body {
 }
 #content h3 {
     display: inline;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 #flot-container {
     box-sizing: boder-box;

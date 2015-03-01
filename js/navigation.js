@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var navItems = {
         "Home": "index.html",
-        "Best Page Ever!!": "standaard.html",
+        "Standardisation": "standaard.html",
         "Correct HTML": "correct.html",
         "Reference": "reference.html",
         "Flickr": "flickr.html",
