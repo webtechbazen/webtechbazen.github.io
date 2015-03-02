@@ -16,32 +16,46 @@
                 </ul>
             </div>
             <div id="content">
+                <a name="Correct HTML"></a>
                 <h1>Correct HTML</h1>
+                <a name="HTML Elements"></a>
                 <h2>HTML Elements</h2>
                 <p>HTML is build by elements whit different syntactic meaning, here are some elements sorted into there appropriate group.</p>
+                <a name="Root element(s)"></a>
                 <h3>Root element(s)</h3>
                 <p>There is only one root element which makes sense considering html has a tree structure, the root element is the html element. Every html document should have a html element.</p>
+                <a name="Document Metadata"></a>
                 <h3>Document Metadata</h3>
                 <p>The metadata elements contain information about the document and are most of the time nested in the head metadata element. Other metadata elements are, the title element which contains the title of the document, the meta element used to store other metadata, and the style element in which you can nest plain css or a css file.</p>
+                <a name="Section elements"></a>
                 <h3>Section elements</h3>
                 <p>The section elements are there to indicate special kinds of content. The most prominent section element is the body element which contains the entire content of the page. Other examples are, the article element which contains an article, the nav element which contains a or the navigation of a page, the footer element which contains the footer of a page, and the h1 (and h2, h3, h4) element(s) which contain titles or subtitles. Most section elements are new in HTML5 to replace commonly used sections previously indicated with div’s.</p>
+                <a name="Grouping content"></a>
                 <h3>Grouping content</h3>
                 <p>The grouping elements separates the document in to logical content groups. The most common grouping elements are the p element which indicates a paragraph, the ul or ol which contain a unordered or ordered list, li which indicates a list item inside a ordered or unordered list, and the div element with which one can sort a group of other elements in a container to give style properties with css.</p>
+                <a name="Text-level semantics"></a>
                 <h3>Text-level semantics</h3>
                 <p>These elements are meant to give meaning to certain parts of text. Examples are, the a element which contains a anchor and is most of the time used to house a link, the i and b elements used to make text aether italic or bold (it is debatable whether these are semantic or syntactic), and the cite element used to indicate a certain text is quoted.</p>
+                <a name="Embedded content"></a>
                 <h3>Embedded content</h3>
                 <p>Content elements contain content that is not plain text. Some examples are: the img element contains a image, the video element contains a video, and an audio element to embed an audio file.</p>
+                <a name="Other groups"></a>
                 <h3>Other groups</h3>
                 <p>Other groups are tabular data these elements contain tables of all kinds, forms which are used to create buttons, check boxes, colour pickers and such, and scripting elements to embed scripting in HTML files.</p>
+                <a name="Correct use of elements"></a>
                 <h3>Correct use of elements</h3>
                 <p>There are a few things that can go wrong with these element, first and foremost every element must have a opening and closing tag if possible (in some cases these can be combined in one like &lt;br/&gt;, in other cases an element only has one tag like img). Also every element must contain its intended content, in some cases a parser won’t notice, like if one puts a entire paragraph inside a h1 element or the other way around, in other cases a parser will notice (and do weird things) like if one puts a paragraph inside a image element. Otherwise not much can go wrong.</p>
+                <a name="Some Other HTML Syntax Rules"></a>
                 <h2>Some Other HTML Syntax Rules</h2>
+                <a name="Tags"></a>
                 <h3>Tags</h3>
                 <p>The elements in HTML are indicated by tags, for example the HTML element starts with an opening tag (&lt;html&gt;) and ends with a closing tag (&lt;/html&gt;). The content of a element must be placed between those tags and must be conform the content type of that element. A few examples of content types are: void elements which have no content such as the image element, and raw text elements which must have text as content.</p>
+                <a name="Attributes"></a>
                 <h3>Attributes</h3>
                 <p>An element can have a attribute, if so this attribute will be expressed inside the opening tag (like &lt;h1 attribute&gt;Some content&lt;/h1&gt;) an attribute has a name and a value. There are exceptions like the exception attribute. The attribute name is written with one or more characters except space, less than, greater than, double quotes, single quotes, back slash, equal sign, and any character that is not defined in unicode. The value of the attributes is separated from the attribute name by an equal sign (and zero or more spaces) and is most of the times in double quotes.</p>
+                <a name="Doctype"></a>
                 <h3>Doctype</h3>
-                <p>Every html file should start with a correct doctype, this is so the browser knows what html version the page is using omitting a doctype results in the browser ‘guessing’ what version it is, which could result in incorrect interpretation of the html file.<br/>“A DOCTYPE must consist of the following components, in this order:</p>
+                <p>Every html file should start with a correct doctype, this is so the browser knows what html version the page is using omitting a doctype results in the browser ‘guessing’ what version it is, which could result in incorrect interpretation of the html file.<br>“A DOCTYPE must consist of the following components, in this order:</p>
                 <ol>
                     <li>A string that is an ASCII case-insensitive match for the string "&lt;!DOCTYPE".</li>
                     <li>One or more space characters.</li>
@@ -50,12 +64,16 @@
                     <li>Zero or more space characters.</li>
                     <li>A "&gt;" (U+003E) character.“</li>
                 </ol>
+                <a name="Text"></a>
                 <h3>Text</h3>
                 <p>The text inside text elements must also abide some rules, because some characters are used by the html syntax they can not be used in a normal manner (how els could you separate &lt;/p&gt; in a paragraph from the end tag of a paragraph). This is why the ampersand syntax is used, to write &lt;/p&gt; one must write &amp;lt;/p&amp;gt;.</p>
+                <a name="Block level and inline elements"></a>
                 <h3>Block level and inline elements</h3>
                 <p>Elements can also be divided in block level elements and inline elements. Block level elements are elements that start on a new line, like the paragraph element and the image element. Inline elements are elements that do not have to start on a new line, like the bold element and the quote element.</p>
+                <a name="HTML Nesting"></a>
                 <h3>HTML Nesting</h3>
                 <p>All these elements can be nested in numerous ways of which some correct and others incorrect. The most important rule is that all elements must be closed before there parent element is closed. For example, &lt;p&gt;&lt;b&gt;Hi&lt;/p&gt;&lt;/b&gt; is incorrect because p is closed before b is closed. Some other special rules are: the head and body elements may only be nested inside the html element, inline elements can not contain block level elements, and a paragraph can not contain block level elements.</p>
+                <a name="Syntax vs semantics"></a>
                 <h3>Syntax vs semantics</h3>
                 <p>There is also some debate over the use of semantic elements and attributes in HTML, officially (or as official as HTML can get) HTML is a syntactic language and not mend to be used to add semantics to the file. Jet HTML5 still houses the bold and italic elements while these are clearly semantic. If one wants to write perfect HTML it is advised not to use the bold and italic element, but instead use the strong and emphasise elements. Other ways to violate the separation of syntax and semantics in HTML is to include css inside the opening tags of elements, this is less efficient and results in more dirty HTML files.</p>
                 <h3>References:</h3>

@@ -132,7 +132,6 @@ body {
     height: 450px;
     padding: 20px 15px 15px 15px;
     margin: 15px auto 30px auto;
-    border: 1px solid #ddd;
 }
 #flot-graph {
     float: left;
