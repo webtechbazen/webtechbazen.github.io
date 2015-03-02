@@ -5,7 +5,8 @@ $(document).ready(function() {
         "Correct HTML": "correct.html",
         "Parsing": "parsing.html",
         "Flickr": "flickr.html",
-        "Flot": "flot.html"
+        "Flot": "flot.html",
+        "Sitemap": "sitemap.html"
     };
     var curPath = $(location).attr("pathname");
     $.each(navItems, function(title, href) {

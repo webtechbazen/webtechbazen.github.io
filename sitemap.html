@@ -1,0 +1,48 @@
+<!-- This is a skeleton page -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sitemap</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/sitemap.js"></script>
+    </head>
+    <body>
+        <div id="title">Sitemap</div>
+        <div id="container">
+            <div id="navigation">
+                <ul id="navlist">
+                </ul>
+            </div>
+            <div id="content">
+                <h1>Sitemap</h1>
+                <div id="sitemap">
+                    <ul>
+                        <li>Push the root element to the element stack;</li>
+                        <li>Initialize an uninitialized temporary child node;</li>
+                        <li class="expandable">Iterate over every character in the input stream and do one of the following:
+                            <ul>
+                                <li class="expandable">When the current character equals to an opening parentheses:
+                                    <ul>
+                                        <li>Check if the temporary child node has contents. If so, add it to the children of the top node on the stack and destroy it;</li>
+                                        <li>Initialize a new node and add it as a child to the top node on the stack.</li>
+                                    </ul>
+                                </li>
+                                <li class="expandable">When the current character equals to an opening parentheses:
+                                    <ul>
+                                        <li>Check if the temporary child node has contents. If so, add it to the children of the top node on the stack and destroy it;</li>
+                                        <li>Pop the top node off the stack and check if it equals to the root node. If so, return a parsing error.</li>
+                                    </ul>
+                                </li>
+                                <li>Otherwise initialize the temporary child node and append the current character to it’s contents.</li>
+                            </ul>
+                        </li>
+                        <li>Pop the top node (if there were no incorrectly nested nodes this should be the root) and check if the temporary child node has contents. If so, add the it to the children of the popped node and destroy the temporary child node.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

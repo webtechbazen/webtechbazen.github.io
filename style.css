@@ -204,3 +204,15 @@ body {
     padding: 1px;
     background: white;
 }
+#sitemap .expanded {
+    list-style-image: url("images/expanded.png");
+    cursor: pointer;
+}
+#sitemap .collapsed {
+    list-style-image: url("images/collapsed.png");
+    cursor: pointer;
+}
+#sitemap .item {
+    list-style: square;
+    cursor: default;
+}
