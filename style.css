@@ -135,6 +135,9 @@ body {
 #content em {
     font-style: italic;
 }
+.right {
+    float: right;
+}
 .code {
     white-space: pre-wrap;
     display: block;

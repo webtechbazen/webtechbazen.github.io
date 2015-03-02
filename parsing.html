@@ -35,20 +35,20 @@
                 <span class="code">add $variable,4</span></p>
                 <h3>The parsing</h3>
                 <p>The simple command parser (actually a tokenizer) will use a parsing state to determine what to do with a certain character is encountered. The parsing state has the one of the following values:
-                <img align="right" src="images/ParseState.png" alt="Parse State" title="Parse State">
+                <img class="right" src="images/ParseState.png" alt="Parse State" title="Parse State"></p>
                 <ul>
                     <li>Default</li>
                     <li>Escaped</li>
                     <li>Text</li>
                     <li>TextEscaped</li>
                 </ul>
-                The parser has the following variables:
+                <p>The parser has the following variables:</p>
                 <ul>
                     <li>The parsing state, initially set to "Default";</li>
                     <li>A temporary buffer, initially empty;</li>
                     <li>A list of tokens, initially empty.</li>
                 </ul>
-                The parser will start iterating over the characters in the input stream and when syntactical characters (spaces, quotes, backslashes or commas) are encountered, the parsing state and/or one of the variables will be updated accordingly. The parser works like this:
+                <p>The parser will start iterating over the characters in the input stream and when syntactical characters (spaces, quotes, backslashes or commas) are encountered, the parsing state and/or one of the variables will be updated accordingly. The parser works like this:</p>
                 <ul>
                     <li>When the parsing state equals to "Default":
                         <ul>
@@ -77,9 +77,8 @@
                         </ul>
                     </li>
                 </ul>
-                When the iteration over all characters is done and the temporary buffer is not empty, the temporary buffer will be added to the list of tokens and then cleared.</p>
-                <p>From this simple command parser example, you hopefully saw that writing a parser requires a methodic approach and will get more and more complex when more features are added to the language that is parsed. The C# code we created as a result of this simple command parser is available on our <a href="https://github.com/webtechbazen/simplecommandparser">GitHub</a>.
-                </p>
+                <p>When the iteration over all characters is done and the temporary buffer is not empty, the temporary buffer will be added to the list of tokens and then cleared.</p>
+                <p>From this simple command parser example, you hopefully saw that writing a parser requires a methodic approach and will get more and more complex when more features are added to the language that is parsed. The C# code we created as a result of this simple command parser is available on our <a href="https://github.com/webtechbazen/simplecommandparser">GitHub</a>.</p>
                 <h2>HTML Encoding</h2>
                 <p>Parsing HTML all starts with getting the HTML document from a byte stream (usually a network or a local filesystem). Once all bytes are retrieved from the stream, the parser needs to figure out which character encoding was used. To determine the character encoding, a parser can use an <a href="http://www.w3.org/TR/html5/syntax.html#encoding-sniffing-algorithm">encoding sniffing algorithm</a> defined by W3C. Once the encoding of the input byte stream has been determined, a character stream is created. This character stream consists of characters (unicode code points) and is created by decoding the byte stream using the determined encoding. The character stream is preprocessed, removing certain characters and throwing errors when invalid characters are part of the stream.</p>
                 <h2>HTML Tree construction</h2>
@@ -91,7 +90,7 @@
                 The tree of the expression above looks like this:</p>
                 <p><img src="images/ParenthesesTree.png" alt="Parentheses Tree" title="Parentheses Tree"></p>
                 <p>The circle nodes in the tree indicate a new group of parentheses. The upper node is called the root and has no functionality apart from being able to have multiple nodes on the same level, the same goes for HTML.
-                Constructing the tree from an expression like mentioned above would go as follows (the last-pushed node on the element stack is hereafter referred to as the top):
+                Constructing the tree from an expression like mentioned above would go as follows (the last-pushed node on the element stack is hereafter referred to as the top):</p>
                 <ul>
                     <li>Push the root element to the element stack;</li>
                     <li>Initialize an uninitialized temporary child node;</li>
@@ -114,7 +113,6 @@
                     </li>
                     <li>Pop the top node (if there were no incorrectly nested nodes this should be the root) and check if the temporary child node has contents. If so, add the it to the children of the popped node and destroy the temporary child node.</li>
                 </ul>
-                </p>
                 <h2>DOM</h2>
                 <p><a href="http://www.w3.org/DOM/#what">W3C says the following</a> about the Document Object Model:</p>
             <blockquote>"The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to dynamically access and update the content, structure and style of documents. The document can be further processed and the results of that processing can be incorporated back into the presented page. This is an overview of DOM-related materials here at W3C and around the web."</blockquote>
