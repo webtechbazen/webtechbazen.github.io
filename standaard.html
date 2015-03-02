@@ -16,26 +16,19 @@
                 </ul>
             </div>
             <div id="content">
-                <a name="Standardisation of HTML and HTML Parsing"></a>
-                <h1>Standardisation of HTML &amp; HTML Parsing</h1>
+                <h1 id="HTML-Standardisation">Standardisation of HTML &amp; HTML Parsing</h1>
                 <p>In an ideal world HTML would be a strict and static language, no matter when or by whom the HTML is written it will always be the same. In this ideal world every site will look the same on every browser because every browser will interpret every HTML file the same. Sadly this is not the case. As a web browser you now have the almost impossible task of extracting a coherent meaning out of “HTML” made by incompetent amateurs.</p>
-                <a name="Effects of Failing Standardisation"></a>
-                <h2>Effects of Failing Standardisation</h2>
+                <h2 id="Failing-Standardisation">Effects of Failing Standardisation</h2>
                 <p>When no one abides the HTML guidelines, browsers are forced to guess what is intended by the author. If they do not show a respectable site, the internet user will think it is the fault of the browser and not the author. The lack of guide lines on how to deal with faulty HTML, leads to the strange situation that every browser shows a different solution. When Internet Explorer was the market leader this was not a big problem, amateurs just wrote HTML and tested it on Internet Explorer and if it looked the way they intended it they were satisfied. They then put there site online, everybody only visited the site via Internet explorer so everybody saw the site as it was intended. When other browser became popular and started implementing there own ‘bad HTML interpret’ solutions, a badly written site looked different on every browser. This resulted in a scattered internet with sites looking different on every browser.</p>
-                <a name="Solutions"></a>
-                <h2>Solutions</h2>
+                <h2 id="Solutions">Solutions</h2>
                 <p>Different industry giants saw the problem and came up with two different and conflicting solutions. The first was introducing a more strict rules on the author side, so there was no space for error. If a HTML file did not abide the rules the browser would just give an error message for example. This would result in a more standardised web but it makes it more difficult to write HTML for the average hobbyist. The other solution was more strict rules on the browser side. So if there is a mistake in the HTML (like, &lt;b&gt; some text &lt;i&gt; some text &lt;/b&gt; some text &lt;/i&gt;) there where rules on how to handle this abomination, so every browser shows the same page. This will also result in a more standardised web but it would also keep the web accessible to hobbyists.</p>
-                <a name="Strict rules for authors"></a>
-                <h3>Strict rules for authors</h3>
+                <h3 id="Author-rules">Strict rules for authors</h3>
                 <p>The main proponent of stricter rules for authors was the W3C. “The World Wide Web Consortium (W3C) is an international community where Member organizations, a full-time staff, and the public work together to develop Web standards.” Which proposed xhtml which had even stricter rules than HTML4-.</p>
-                <a name="Strict rules for browsers"></a>
-                <h3>Strict rules for browsers</h3>
+                <h3 id="Browsers-rules">Strict rules for browsers</h3>
                 <p>The main proponent of stricter rules for browsers is the WHATWG. “The Web Hypertext Application Technology Working Group (WHATWG) is a growing community of people interested in evolving the Web. It focuses primarily on the development of HTML and APIs needed for Web applications.” Which proposed and backs HTML5.</p>
-                <a name="Future"></a>
-                <h3>Future</h3>
+                <h3 id="Future">Future</h3>
                 <p>The future of HTML is most likely HTML5 by WHATWG if only because it is backed by most of the industry’s most powerful players and even by the W3C.</p>
-                <a name="Standards and Parsing"></a>
-                <h2>Standards and Parsing</h2>
+                <h2 id="Standards">Standards and Parsing</h2>
                 <p>If you look at the problem from a parsers point of view the W3C way of solving things is superior. XHTML keeps the tree structure of HTML in tact which makes parsers more elegant and easier to write and maintain. The WHATWG’s approach is less merciful for parsers, it results in parsers needing to build in all kinds of exceptions. For example, automatically ending an unclosed paragraph if an other paragraph started. Or in the case of the wrongly nested bold and italics elements, after opening the bold element first closing the bold element, opening the italic element then reopening the bold element, closing the bold element again and then finally closing the italic element. One can imagine the hassle all these exceptions to the rule might cause for the writers of a HTML parser.</p>
                 <h3>References:</h3>
                 <ol id="references">
