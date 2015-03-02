@@ -36,6 +36,7 @@ a:active {
 a.external {
     background-position: center right;
     background-repeat: no-repeat;
+    background-image: url(http://bits.wikimedia.org/static-1.25wmf17/skins/Vector/images/external-link-ltr-icon.png);
     padding-right: 13px;
 }
 body {
@@ -128,6 +129,9 @@ body {
 }
 #content em {
     font-style: italic;
+}
+#references li {
+    font-size: 1em;
 }
 #flot-container {
     box-sizing: boder-box;
