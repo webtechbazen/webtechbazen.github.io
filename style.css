@@ -108,12 +108,17 @@ body {
     background-color: white;
 }
 #content p {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-top: 0px;
     padding: 0px;
 }
+#content p img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 #content li {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 #content h1 {
     font-size: 2.5em;
@@ -129,6 +134,16 @@ body {
 }
 #content em {
     font-style: italic;
+}
+.code {
+    white-space: pre-wrap;
+    display: block;
+    font-family: monospace;
+    font-size: 0.9em;
+    margin-left: 4em;
+}
+.reflink {
+    font-size: 0.5em;
 }
 #references li {
     font-size: 1em;

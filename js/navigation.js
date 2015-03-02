@@ -3,6 +3,7 @@ $(document).ready(function() {
         "Home": "index.html",
         "Standardisation": "standaard.html",
         "Correct HTML": "correct.html",
+        "Parsing": "parsing.html",
         "Flickr": "flickr.html",
         "Flot": "flot.html"
     };

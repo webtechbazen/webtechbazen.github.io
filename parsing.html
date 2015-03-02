@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Parsing</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/reference.js"></script>
+    </head>
+    <body>
+        <div id="title">HTML Parsing</div>
+        <div id="container">
+            <div id="navigation">
+                <ul id="navlist">
+                </ul>
+            </div>
+            <div id="content">
+                <h1>HTML Parsing</h1>
+                <p>Parsing HTML documents in generally considered to be a very hard exercise<sup><a href="http://stackoverflow.com/a/1732454/1806760">1</a></sup><sup><a href="http://stackoverflow.com/a/7192495/1806760">2</a></sup><sup><a href="http://blog.codinghorror.com/parsing-html-the-cthulhu-way">3</a></sup><sup><a href="http://techoctave.com/c7/posts/50-silly-rabbit-parsing-html-is-for-kids">4</a></sup>. However, with the introduction of the HTML5 standard the parsing process has been normalised. The World Wide Web Consortium (hereafter abbreviated as W3C) devoted about 140 pages to HTML parsing alone. These pages contain a full specification of the parsing process and include guidelines on how to handle syntactical errors in HTML documents. In this chapter we will attempt to describe the various stages of HTML parsing.</p>
+                <h2>Simple command parser</h2>
+                <p>Before going more in-depth about HTML parsing we will look at a very simple command parser to get more comfortable with the basic parsing concepts. The goal is to parse a command with arguments in the following form:
+                <span class="code">command argument1, argument2, argumentN</span>
+                The space between the command and the arguments is mandatory, but the space between the comma and the arguments is optional. Spaces inside of the arguments have to be ignored, unless escaped or inside quotes. Same goes for the comma:
+                <span class="code">repeat "Sorry soldier, shoes sold in pairs.",3</span>
+                <span class="code">repeat Sorry\ soldier\,\ shoes\ sold\ in\ pairs., 3</span>
+                The commands above are equivalent, but the first one is far more readable for humans, which is the reason quotes are introduced in the syntax. Since we use quotes for strings and backslashes for escaping characters, they can both be created by escaping them:
+                <span class="code">print "\"When in doubt, use brute force.\" - Ken Thompson"</span>
+                <span class="code">count string1, \\</span>
+                Since spaces are ignored in arguments, the following commands are equivalent:
+                <span class="code">concat    I like    piz za    ,  a  lot</span>
+                <span class="code">concat Ilikepizza,alot</span>
+                The parser for this simple example will output an array of strings, where the first string is the command and the strings after that are the command arguments. When a backslash is followed by a non-escapable character (anything but the quote and the backslash), the backslash is ignored. This makes the following commands equivalent:
+                <span class="code">add \$va\ria\b\le,4</span>
+                <span class="code">add $variable,4</span></p>
+                <h3>The parsing</h3>
+                <p>The simple command parser (actually a tokenizer) will use a parsing state to determine what to do with a certain character is encountered. The parsing state has the one of the following values:
+                <img align="right" src="images/ParseState.png" alt="Parse State" title="Parse State">
+                <ul>
+                    <li>Default</li>
+                    <li>Escaped</li>
+                    <li>Text</li>
+                    <li>TextEscaped</li>
+                </ul>
+                The parser has the following variables:
+                <ul>
+                    <li>The parsing state, initially set to "Default";</li>
+                    <li>A temporary buffer, initially empty;</li>
+                    <li>A list of tokens, initially empty.</li>
+                </ul>
+                The parser will start iterating over the characters in the input stream and when syntactical characters (spaces, quotes, backslashes or commas) are encountered, the parsing state and/or one of the variables will be updated accordingly. The parser works like this:
+                <ul>
+                    <li>When the parsing state equals to "Default":
+                        <ul>
+                            <li>When a space (command separator) is encountered and the list of tokens is empty (the end of the command text is reached), the (non-empty) temporary buffer is added to the list of tokens and then cleared;</li>
+                            <li>When a comma (argument separator) is encountered, the temporary buffer is added to the list of tokens and then cleared;</li>
+                            <li>When a backslash (escape character) is encountered, the parsing state is changed to "Escaped";</li>
+                            <li>When a quote (text escape block) is encountered, the parsing state is changed to "Text";</li>
+                            <li>Otherwise the current character is appended to the temporary buffer.</li>
+                        </ul>
+                    </li>
+                    <li>When the parsing state equals to "Escaped":
+                        <ul>
+                            <li>The current character is added to the temporary buffer and the parsing state is changed to "Default".</li>
+                        </ul>
+                    </li>
+                    <li>When the parsing state equals to "Text":
+                        <ul>
+                            <li>When a backslash (escape character) is encountered, the parsing state is changed to "TextEscaped";</li>
+                            <li>When a quote (text escape block) is encountered, the temporary buffer is added to the list of tokens and then cleared. After that the parsing state is changed to "Default";</li>
+                            <li>Otherwise the current character is appended to the temporary buffer.</li>
+                        </ul>
+                    </li>
+                    <li>When the parsing state equals to "TextEscaped":
+                        <ul>
+                            <li>The current character is appended to the temporary buffer and the parsing state is changed to "Text".</li>
+                        </ul>
+                    </li>
+                </ul>
+                When the iteration over all characters is done and the temporary buffer is not empty, the temporary buffer will be added to the list of tokens and then cleared.</p>
+                <p>From this simple command parser example, you hopefully saw that writing a parser requires a methodic approach and will get more and more complex when more features are added to the language that is parsed. The C# code we created as a result of this simple command parser is available on our <a href="https://github.com/webtechbazen/simplecommandparser">GitHub</a>.
+                </p>
+                <h2>HTML Encoding</h2>
+                <p>Parsing HTML all starts with getting the HTML document from a byte stream (usually a network or a local filesystem). Once all bytes are retrieved from the stream, the parser needs to figure out which character encoding was used. To determine the character encoding, a parser can use an <a href="http://www.w3.org/TR/html5/syntax.html#encoding-sniffing-algorithm">encoding sniffing algorithm</a> defined by W3C. Once the encoding of the input byte stream has been determined, a character stream is created. This character stream consists of characters (unicode code points) and is created by decoding the byte stream using the determined encoding. The character stream is preprocessed, removing certain characters and throwing errors when invalid characters are part of the stream.</p>
+                <h2>HTML Tree construction</h2>
+                <p>Just like the simple command parser example above, HTML uses a state machine for parsing. The exact behaviour of each state can be found <a href="http://www.w3.org/TR/html5/syntax.html#tokenization">here</a>. However, since HTML must be represented as a DOM tree, there is an additional step after the tokenization which is called <a href="http://www.w3.org/TR/html5/syntax.html#tree-construction">Tree construction</a>. The tree construction stage starts with an array of tokens from the HTML tokenization stage. The tree constructor has an insertion mode, which has states like "Initial", "Before HTML", "Before Head", etc. Depending on which token was encountered and which insertion mode is set. When a tree is constructed it might look something like this:</p>
+                <p><img src="images/HTMLTree.png" alt="HTML Tree" title="HTML Tree"></p>
+                <h3>Simple tree constructor</h3>
+                <p>Because parentheses can be nested, a stack will be used so the tree constructor knows which element it should add children to. As an example we want construct the tree of the following expression:
+                <span class="code">((2-x)/(x+5))*(x+7)</span>
+                The tree of the expression above looks like this:</p>
+                <p><img src="images/ParenthesesTree.png" alt="Parentheses Tree" title="Parentheses Tree"></p>
+                <p>The circle nodes in the tree indicate a new group of parentheses. The upper node is called the root and has no functionality apart from being able to have multiple nodes on the same level, the same goes for HTML.
+                Constructing the tree from an expression like mentioned above would go as follows (the last-pushed node on the element stack is hereafter referred to as the top):
+                <ul>
+                    <li>Push the root element to the element stack;</li>
+                    <li>Initialize an uninitialized temporary child node;</li>
+                    <li>Iterate over every character in the input stream and do one of the following:
+                        <ul>
+                            <li>When the current character equals to an opening parentheses:
+                                <ul>
+                                    <li>Check if the temporary child node has contents. If so, add it to the children of the top node on the stack and destroy it;</li>
+                                    <li>Initialize a new node and add it as a child to the top node on the stack.</li>
+                                </ul>
+                            </li>
+                            <li>When the current character equals to an opening parentheses:
+                                <ul>
+                                    <li>Check if the temporary child node has contents. If so, add it to the children of the top node on the stack and destroy it;</li>
+                                    <li>Pop the top node off the stack and check if it equals to the root node. If so, return a parsing error.</li>
+                                </ul>
+                            </li>
+                            <li>Otherwise initialize the temporary child node and append the current character to it’s contents.</li>
+                        </ul>
+                    </li>
+                    <li>Pop the top node (if there were no incorrectly nested nodes this should be the root) and check if the temporary child node has contents. If so, add the it to the children of the popped node and destroy the temporary child node.</li>
+                </ul>
+                </p>
+                <h2>DOM</h2>
+                <p><a href="http://www.w3.org/DOM/#what">W3C says the following</a> about the Document Object Model:</p>
+            <blockquote>"The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to dynamically access and update the content, structure and style of documents. The document can be further processed and the results of that processing can be incorporated back into the presented page. This is an overview of DOM-related materials here at W3C and around the web."</blockquote>
+            <p>
+            Because of the dynamic design, it is not possible to completely separate the tokenization and the tree building. Scripts could manipulate the DOM, which would in it’s turn trigger parsing and tree building. The following image (taken from here) illustrates this very well:</p>
+            <p><img src="images/ParsingModel.png" alt="Parsing Model" title="Parsing Model"></p>
+            <h3>References:</h3>
+            <ol id="references">
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
