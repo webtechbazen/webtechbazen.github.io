@@ -167,6 +167,27 @@ body {
     float: right;
     width: 135px;
 }
+#flickrForm {
+    text-align: center;
+}
+#flickrForm button {
+    color: black;
+    background: orange;
+    border: 1px solid black;
+}
+#flickrForm button:hover {
+    background: #FF8C00;
+    cursor: pointer;
+}
+#flickrForm input {
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+}
+#flickrForm input:focus {
+    border-bottom: solid 2px #969696;
+    outline: none;
+}
 #gallery {
     list-style-type: none;
     padding: 0px;

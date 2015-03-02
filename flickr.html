@@ -10,17 +10,19 @@
         <script src="js/flickr.js"></script>
     </head>
     <body>
-        <div id="title">Flickr API Test</div>
+        <div id="title">Flickr Photo Gallery</div>
         <div id="container">
             <div id="navigation">
                 <ul id="navlist">
                 </ul>
             </div>
             <div id="content">
-                <h1>Flickr REST API Testing Page</h1>
+                <h2>Flick Photo Gallery</h2>
                 <p>
-                <input id="searchQuery" type="text">
-                <button id="searchButton" type="button">Search</button>
+                <form id="flickrForm" autocomplete="off" action="#">
+                    <input id="searchQuery" type="text">
+                    <button id="searchButton" type="button">Search</button>
+                </form>
                 <ul id="gallery">
                 </ul>
                 <div id="largeImage"></div>

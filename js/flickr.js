@@ -56,6 +56,10 @@ function searchPhotos() {
 }
 $(document).ready(function() {
     $("#searchButton").click(searchPhotos);
+    $("#flickrForm").submit(function(event) {
+        event.preventDefault();
+        searchPhotos();
+    });
     $("#largeImage").click(largeImageClick);
     $("#searchQuery").val("coral reef");
     searchPhotos();
