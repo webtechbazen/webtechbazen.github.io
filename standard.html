@@ -28,7 +28,7 @@
                 <p>The main proponent of stricter rules for browsers is the WHATWG. <em>“The Web Hypertext Application Technology Working Group (WHATWG) is a growing community of people interested in evolving the Web. It focuses primarily on the development of HTML and APIs needed for Web applications.”</em> [<a href="https://wiki.whatwg.org/wiki/FAQ">source</a>] Which proposed and backs HTML5.</p>
                 <h3 id="Future">Future</h3>
                 <p>The future of HTML is most likely HTML5 by WHATWG if only because it is backed by most of the industry’s most powerful players and even by the W3C.</p>
-                <h2 id="Standards">Standards and Parsing</h2>
+                <h2 id="Standards-Parsing">Standards and Parsing</h2>
                 <p>If you look at the problem from a parsers point of view the W3C way of solving things is superior. XHTML keeps the tree structure of HTML in tact which makes parsers more elegant and easier to write and maintain. The WHATWG’s approach is less merciful for parsers, it results in parsers needing to build in all kinds of exceptions. For example, automatically ending an unclosed paragraph if an other paragraph started. Or in the case of the wrongly nested bold and italics elements, after opening the bold element first closing the bold element, opening the italic element then reopening the bold element, closing the bold element again and then finally closing the italic element. One can imagine the hassle all these exceptions to the rule might cause for the writers of a HTML parser.</p>
                 <h3>References:</h3>
                 <ol id="references">
