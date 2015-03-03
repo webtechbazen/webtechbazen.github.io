@@ -2,21 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>HTML Parsing</title>
+        <title>Parsing</title>
         <link rel="stylesheet" href="style.css">
         <script src="js/jquery-1.11.2.js"></script>
         <script src="js/navigation.js"></script>
         <script src="js/reference.js"></script>
     </head>
     <body>
-        <div id="title">HTML Parsing</div>
+        <div id="title">Parsing</div>
         <div id="container">
             <div id="navigation">
                 <ul id="navlist">
                 </ul>
             </div>
             <div id="content">
-                <h1 id="HTML-Parsing">HTML Parsing</h1>
+                <h2 id="HTML-Parsing">HTML Parsing</h2>
                 <p>Parsing HTML documents in generally considered to be a very hard exercise<sup><a href="http://stackoverflow.com/a/1732454/1806760">1</a></sup><sup><a href="http://stackoverflow.com/a/7192495/1806760">2</a></sup><sup><a href="http://blog.codinghorror.com/parsing-html-the-cthulhu-way">3</a></sup><sup><a href="http://techoctave.com/c7/posts/50-silly-rabbit-parsing-html-is-for-kids">4</a></sup>. However, with the introduction of the HTML5 standard the parsing process has been normalised. The World Wide Web Consortium (hereafter abbreviated as W3C) devoted about 140 pages to HTML parsing alone. These pages contain a full specification of the parsing process and include guidelines on how to handle syntactical errors in HTML documents. In this chapter we will attempt to describe the various stages of HTML parsing.</p>
                 <h2 id="Simple-command-parser">Simple command parser</h2>
                 <p>Before going more in-depth about HTML parsing we will look at a very simple command parser to get more comfortable with the basic parsing concepts. The goal is to parse a command with arguments in the following form:

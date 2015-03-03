@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>HTML Parsing</title>
+        <title>Correct HTML</title>
         <link rel="stylesheet" href="style.css">
         <script src="js/jquery-1.11.2.js"></script>
         <script src="js/navigation.js"></script>
@@ -16,9 +16,8 @@
                 </ul>
             </div>
             <div id="content">
-                <h1 id="Correct-HTML">Correct HTML</h1>
                 <h2 id="HTML-Elements">HTML Elements</h2>
-                <p>HTML is build by elements whit different syntactic meaning, here are some elements sorted into there appropriate group.</p>
+                <p>HTML is built by elements whit different syntactic meaning, here are some elements sorted into there appropriate group.</p>
                 <h3 id="Root">Root element(s)</h3>
                 <p>There is only one root element which makes sense considering html has a tree structure, the root element is the html element. Every html document should have a html element.</p>
                 <h3 id="Document">Document metadata</h3>
@@ -41,7 +40,8 @@
                 <h3 id="Attributes">Attributes</h3>
                 <p>An element can have a attribute, if so this attribute will be expressed inside the opening tag (like &lt;h1 attribute&gt;Some content&lt;/h1&gt;) an attribute has a id and a value. There are exceptions like the exception attribute. The attribute id is written with one or more characters except space, less than, greater than, double quotes, single quotes, back slash, equal sign, and any character that is not defined in unicode. The value of the attributes is separated from the attribute id by an equal sign (and zero or more spaces) and is most of the times in double quotes.</p>
                 <h3 id="Doctype">Doctype</h3>
-                <p>Every html file should start with a correct doctype, this is so the browser knows what html version the page is using omitting a doctype results in the browser ‘guessing’ what version it is, which could result in incorrect interpretation of the html file.<br>“A DOCTYPE must consist of the following components, in this order:</p>
+                <p>Every html file should start with a correct doctype, this is so the browser knows what html version the page is using omitting a doctype results in the browser ‘guessing’ what version it is, which could result in incorrect interpretation of the html file. According to the <a href="http://www.w3.org/TR/html5/syntax.html#the-doctype">W3C</a>:</p>
+                <blockquote cite="http://www.w3.org/TR/html5/syntax.html#the-doctype">"A DOCTYPE must consist of the following components, in this order:</p>
                 <ol>
                     <li>A string that is an ASCII case-insensitive match for the string "&lt;!DOCTYPE".</li>
                     <li>One or more space characters.</li>
@@ -50,7 +50,7 @@
                     <li>Zero or more space characters.</li>
                     <li>A "&gt;" (U+003E) character.“</li>
                 </ol>
-                <p>[<a href="http://www.w3.org/TR/html5/syntax.html#the-doctype">W3C</a>]</p>
+                </blockquote>
                 <h3 id="Text">Text</h3>
                 <p>The text inside text elements must also abide some rules, because some characters are used by the html syntax they can not be used in a normal manner (how els could you separate &lt;/p&gt; in a paragraph from the end tag of a paragraph). This is why the ampersand syntax is used, to write &lt;/p&gt; one must write &amp;lt;/p&amp;gt;.</p>
                 <h3 id="Block-inline-elements">Block level and inline elements</h3>

@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var navItems = {
         "Home": "index.html",
-        "Standardisation": "standaard.html",
+        "Standardisation": "standard.html",
         "Correct HTML": "correct.html",
         "Parsing": "parsing.html",
         "Flickr": "flickr.html",
